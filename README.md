@@ -48,6 +48,21 @@ Quais métricas vocês acham que ajudam a provar que um time está melhorando su
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 📊 Quadro Comparativo — Métricas de DevOps
 
 | **Métrica**                        | **O que mede**                                             | **Por que é útil**                                                                 |
