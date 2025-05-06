@@ -45,23 +45,7 @@ Quais métricas vocês acham que ajudam a provar que um time está melhorando su
 
 <img src="https://github.com/agodoi/m12-semana04/imgs/graficoSubida.png" width="500">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br><br><br><br><br><br><br><br><br>
 
 ## 📊 Quadro Comparativo — Métricas de DevOps
 
