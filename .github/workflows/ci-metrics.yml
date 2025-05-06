@@ -1,1 +1,49 @@
+name: CI com Métricas
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    name: Build, Testes e Métricas
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    - name: Registrar início do job
+      run: echo "JOB_STARTED_AT=$(date +%s)" >> $GITHUB_ENV
+
+    - name: Instalar dependências
+      run: npm install
+
+    - name: Rodar testes com cobertura
+      run: |
+        npm run test -- --coverage
+        echo "TEST_SUCCESS=$?" >> $GITHUB_ENV
+
+    - name: Enviar cobertura para Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Registrar fim do job
+      run: echo "JOB_ENDED_AT=$(date +%s)" >> $GITHUB_ENV
+
+    - name: Calcular duração do build
+      run: |
+        DURATION=$(( $JOB_ENDED_AT - $JOB_STARTED_AT ))
+        echo "⏱️ Duração total do job: $DURATION segundos"
+        echo "BUILD_DURATION=$DURATION" >> $GITHUB_ENV
+
+    - name: Exportar métrica para Prometheus (simulado)
+      run: |
+        echo "build_duration_seconds $BUILD_DURATION" > metrics.txt
+
+    - name: Condicional: falha ou sucesso dos testes
+      if: env.TEST_SUCCESS != '0'
+      run: |
+        echo "⚠️ Testes falharam. Tempo para corrigir deve ser monitorado!"
 
