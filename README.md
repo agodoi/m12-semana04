@@ -127,64 +127,68 @@ Se você tivesse que escolher uma única métrica para monitorar a saúde do seu
 
 #### 🕒 Lead Time (Tempo de Entrega)
 Definição: Tempo entre o commit do desenvolvedor e a entrega em produção.
-
+<br>
 **Exemplo:**
 João fez um commit às 10h da manhã. Após passar pelo pipeline (build, testes, revisão, deploy), a funcionalidade foi ao ar às 14h.
 🟢 Lead Time = 4 horas
 
+---
 #### 📈 Frequência de Implantação (Deploy Frequency)
 Definição: Quantas vezes o time entrega código em produção num determinado período.
-
+<br>
 **Exemplo:**
 Na última semana, o time fez 12 deploys no ambiente de produção.
 🟢 Frequência de Implantação = 12 por semana
 
-
+---
 #### ❌ Taxa de Falhas de Mudança (Change Failure Rate)
 Definição: Porcentagem de mudanças implantadas que causaram falha.
-
+<br>
 **Exemplo:**
 De 10 deploys feitos, 2 causaram erros em produção e precisaram de correção imediata.
 🟠 Taxa de Falhas de Mudança = 20%
 
-
+---
 #### 🔧 Tempo Médio de Recuperação (MTTR)
 Definição: Tempo médio para restaurar o sistema após uma falha em produção.
-
+<br>
 **Exemplo:**
 Um bug derrubou o sistema às 15h, e foi resolvido às 15h40.
 🟢 MTTR = 40 minutos
 
-
+---
 #### 🧪 Cobertura de Código
 Definição: Percentual do código coberto por testes automatizados.
-
+<br>
 **Exemplo:**
 Com uso de JaCoCo, o time viu que 78% das funções têm testes automatizados.
 🟢 Cobertura = 78%
 
-
+---
 #### ✅ Taxa de Sucesso dos Testes
 Definição: Percentual de testes que passaram em uma execução.
-
+<br>
 **Exemplo:**
 Num pipeline com 200 testes, 192 passaram.
 🟢 Taxa de Sucesso = 96%
 
+---
 #### 🧱 Duração do Build
 Definição: Tempo necessário para compilar e empacotar a aplicação.
-
+<br>
 **Exemplo:**
 O GitHub Actions indica que a execução do job de build leva 7 minutos.
 🟢 Duração do Build = 7 minutos
 
+---
 #### 💥 Taxa de Falhas de Implantação
 Definição: Porcentagem de implantações que falham no processo de deploy.
-
+<br>
 **Exemplo:**
 De 5 execuções do job de deploy, 1 falhou por erro de configuração.
 🟠 Taxa de Falhas de Implantação = 20%
 
+---
 
 4. Instrumentação com GitHub Actions
 Quais métricas podem ser extraídas diretamente do GitHub Actions
