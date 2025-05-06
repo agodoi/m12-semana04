@@ -62,6 +62,7 @@ Quais métricas vocês acham que ajudam a provar que um time está melhorando su
 ### 🎯 2. Fundamentos das Métricas de CI/CD
 
 #### O que são Métricas de CI/CD?
+
 As métricas de CI/CD são indicadores extraídos das etapas de Integração Contínua (CI) e Entrega Contínua (CD) de um pipeline de desenvolvimento de software. 
 
 Elas servem para medir e analisar o desempenho, a qualidade e a confiabilidade dos processos de construção, teste e entrega de software.
@@ -70,36 +71,31 @@ Em outras palavras: as métricas dizem como está o “batimento cardíaco” do
 
 Essas métricas ajudam a entender:
 
-Se o código está funcionando bem
+* Se o código está funcionando bem
+* Se o processo de entrega está rápido
+* Se há falhas recorrentes
+* Se o time está evoluindo ou estagnado
 
-Se o processo de entrega está rápido
+#### 🚀 Por que essas métricas são importantes?
 
-Se há falhas recorrentes
+1) Tomada de decisão baseada em dados
+   
+* Evita decisões por “achismo”.
+* Permite ajustes precisos nos processos do time.
 
-Se o time está evoluindo ou estagnado
+2) Melhoria Contínua
+   
+* Identifica pontos de gargalo e desperdício.
+* Serve como bússola para onde melhorar: build, testes, tempo de deploy, etc.**
 
-🚀 Por que essas métricas são importantes?
-Tomada de decisão baseada em dados
+3) Qualidade e Confiabilidade
 
-Evita decisões por “achismo”.
+* Monitora a estabilidade das versões entregues.
+* Reduz riscos ao automatizar testes e deploys.
 
-Permite ajustes precisos nos processos do time.
+4) Visibilidade e transparência
 
-Melhoria Contínua
-
-Identifica pontos de gargalo e desperdício.
-
-Serve como bússola para onde melhorar: build, testes, tempo de deploy, etc.
-
-Qualidade e Confiabilidade
-
-Monitora a estabilidade das versões entregues.
-
-Reduz riscos ao automatizar testes e deploys.
-
-Visibilidade e transparência
-
-Todos os membros do time enxergam a performance do pipeline e do produto.
+* Todos os membros do time enxergam a performance do pipeline e do produto.
 
 📊 Categorias de Métricas
 Para facilitar o entendimento e aplicação, as métricas de CI/CD podem ser agrupadas em quatro categorias principais:
