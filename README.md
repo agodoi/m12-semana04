@@ -43,10 +43,22 @@ A automação reduz riscos humanos, permitindo deploys frequentes e seguros.
 ### 💬 Discussão
 Quais métricas vocês acham que ajudam a provar que um time está melhorando sua entrega ao longo do tempo?
 
-
 <img src="https://github.com/agodoi/m12-semana04/imgs/graficoSubida.png" width="500">
 
 
+
+
+## 📊 Quadro Comparativo — Métricas de DevOps
+
+| **Métrica**                        | **O que mede**                                             | **Por que é útil**                                                                 |
+|-----------------------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| **Lead Time**                     | Tempo do commit ao deploy                                   | Avalia a eficiência de entrega; menor tempo = maior agilidade                      |
+| **Frequência de Implantação**     | Nº de deploys por período                                   | Indica a capacidade de entrega contínua e feedback rápido                          |
+| **Taxa de Sucesso dos Testes**    | % de testes automatizados que passam                        | Reflete a estabilidade do código e qualidade dos testes                            |
+| **Cobertura de Código**           | % do código coberto por testes                              | Ajuda a garantir que o código está minimamente validado por testes                 |
+| **MTTR (Tempo Médio de Recuperação)** | Tempo para restaurar o sistema após falha              | Mede a resiliência e capacidade de resposta a incidentes                           |
+| **Taxa de Falhas de Mudança**     | % de deploys que causam falhas                              | Mostra a confiabilidade das entregas                                               |
+| **Duração do Build**              | Tempo necessário para concluir o processo de build          | Ajuda a identificar gargalos no pipeline                                           |
 
 
 
