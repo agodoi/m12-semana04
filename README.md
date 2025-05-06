@@ -26,6 +26,9 @@ Reduz o tempo entre escrever o código e entregá-lo ao usuário final.
 #### 2. Melhoria da qualidade do software
 Ao incluir testes automatizados e feedback contínuo, a chance de bugs em produção diminui.
 
+
+<img src="https://github.com/agodoi/m05-semana10/blob/main/imgs/transistor-cortado.png" width="500">
+
 #### 3. Colaboração interfuncional
 Desenvolvedores e operadores trabalham juntos, compartilhando métricas, responsabilidades e decisões.
 
