@@ -130,6 +130,7 @@ Definição: Tempo entre o commit do desenvolvedor e a entrega em produção.
 <br>
 **Exemplo:**
 João fez um commit às 10h da manhã. Após passar pelo pipeline (build, testes, revisão, deploy), a funcionalidade foi ao ar às 14h.
+<br>
 🟢 Lead Time = 4 horas
 
 ---
@@ -138,6 +139,7 @@ Definição: Quantas vezes o time entrega código em produção num determinado 
 <br>
 **Exemplo:**
 Na última semana, o time fez 12 deploys no ambiente de produção.
+<br>
 🟢 Frequência de Implantação = 12 por semana
 
 ---
@@ -146,6 +148,7 @@ Definição: Porcentagem de mudanças implantadas que causaram falha.
 <br>
 **Exemplo:**
 De 10 deploys feitos, 2 causaram erros em produção e precisaram de correção imediata.
+<br>
 🟠 Taxa de Falhas de Mudança = 20%
 
 ---
@@ -154,6 +157,7 @@ Definição: Tempo médio para restaurar o sistema após uma falha em produção
 <br>
 **Exemplo:**
 Um bug derrubou o sistema às 15h, e foi resolvido às 15h40.
+<br>
 🟢 MTTR = 40 minutos
 
 ---
@@ -162,6 +166,7 @@ Definição: Percentual do código coberto por testes automatizados.
 <br>
 **Exemplo:**
 Com uso de JaCoCo, o time viu que 78% das funções têm testes automatizados.
+<br>
 🟢 Cobertura = 78%
 
 ---
@@ -170,6 +175,7 @@ Definição: Percentual de testes que passaram em uma execução.
 <br>
 **Exemplo:**
 Num pipeline com 200 testes, 192 passaram.
+<br>
 🟢 Taxa de Sucesso = 96%
 
 ---
@@ -178,6 +184,7 @@ Definição: Tempo necessário para compilar e empacotar a aplicação.
 <br>
 **Exemplo:**
 O GitHub Actions indica que a execução do job de build leva 7 minutos.
+<br>
 🟢 Duração do Build = 7 minutos
 
 ---
@@ -186,6 +193,7 @@ Definição: Porcentagem de implantações que falham no processo de deploy.
 <br>
 **Exemplo:**
 De 5 execuções do job de deploy, 1 falhou por erro de configuração.
+<br>
 🟠 Taxa de Falhas de Implantação = 20%
 
 ---
