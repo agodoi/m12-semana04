@@ -201,11 +201,77 @@ Se você tivesse que escolher uma única métrica para monitorar a saúde do seu
 
 ### 4. Instrumentação com GitHub Actions
 
-Quais métricas podem ser extraídas diretamente do GitHub Actions
+O **GitHub Actions** é uma poderosa plataforma de automação para CI/CD, e oferece acesso a logs, tempos de execução e status dos jobs de forma nativa. Isso permite que várias métricas sejam extraídas diretamente dos seus workflows.
 
-Limitações do GitHub Actions (o que não é possível monitorar diretamente)
+As principais métricas que podem ser instrumentadas diretamente:
 
-Ferramentas complementares: Prometheus, Grafana, Sentry
+
+| **Métrica**                    | **Como obter com GitHub Actions**                                                                                             |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Lead Time**                  | Usando timestamps do commit + deploy nos workflows                                                                            |
+| **Duração do Build**           | Usando logs de tempo de execução (`job.started_at` e `job.completed_at`)                                                      |
+| **Taxa de Sucesso dos Testes** | Interpretando resultados de testes automatizados (ex: `jest`, `pytest`, `JUnit`) com `exit codes` e `actions/upload-artifact` |
+| **Cobertura de Código**        | Usando ferramentas como JaCoCo, Codecov ou Coveralls integradas ao pipeline                                                   |
+| **Tempo para Corrigir Testes** | Comparando falhas em runs anteriores com execuções que voltaram a passar                                                      |
+
+
+
+#### 🕒 Lead Time
+
+Como medir: timestamps do commit e do deploy
+<br>
+**Exemplo prático:** um aluno faz um commit às 09h00 da manhã. O workflow executa testes e build automaticamente. O job de deploy ocorre às 11h15 no ambiente de staging.
+<br>
+🟢 Lead Time = 2h15min
+<br>
+Você pode registrar o horário do commit com github.event.head_commit.timestamp e o horário do fim do deploy com steps.deploy.completed_at.
+
+---
+#### 🧱 Duração do Build
+
+Como medir: tempo entre início e fim do job de build no GitHub Actions
+<br>
+**Exemplo prático:** o job de build começou às 14h02 e terminou às 14h09. No log do GitHub Actions, isso aparece automaticamente com o tempo total do job.
+<br>
+🟢 Duração do Build = 7 minutos
+<br>
+Exibido direto no summary do GitHub Actions. Pode ser registrado em uma métrica com Prometheus.
+
+---
+#### ✅ Taxa de Sucesso dos Testes
+Como medir: Verificando exit codes dos frameworks de teste (ex: pytest, jest) e interpretando os relatórios
+<br>
+**Exemplo prático:** um job de testes executa 120 testes com pytest. 117 testes passaram e 3 falharam.
+<br>
+🟢 Taxa de Sucesso = 97,5%
+<br>
+Os resultados podem ser salvos com actions/upload-artifact, analisados com test-reporter ou enviados ao Codecov.
+
+---
+#### 🧪 Cobertura de Código
+Como medir: Usando ferramentas como JaCoCo, Codecov ou Coveralls integradas ao CI
+<br>
+**Exemplo prático:** o time configura JaCoCo em um projeto Java. Após o teste, JaCoCo gera um relatório: 80% das classes estão cobertas por testes.
+<br>
+🟢 Cobertura de Código = 80%
+<br>
+O relatório pode ser enviado ao Codecov via GitHub Actions com um token e mostrado em forma de badge no README.
+
+---
+#### 🔁 Tempo para Corrigir Testes
+Como medir: comparar tempo entre a falha de um teste e a execução posterior que passou.
+<br>
+**Exemplo prático:** pipeline executada às 10h falha por causa de testes com jest. Alguém corrige o erro e faz novo push às 13h. O pipeline passa com 100% dos testes.
+<br>
+🟢 Tempo para Corrigir Testes = 3 horas
+<br>
+Você pode escrever um script que busca no histórico do Actions (via API) a última falha e o primeiro sucesso subsequente para esse mesmo job/teste.
+
+
+
+
+
+
 
 ### 5. Aplicação Prática no Repositório
 
