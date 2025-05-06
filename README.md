@@ -58,72 +58,7 @@ Quais métricas vocês acham que ajudam a provar que um time está melhorando su
 | **Taxa de Falhas de Mudança**     | % de deploys que causam falhas                              | Mostra a confiabilidade das entregas                                               |
 | **Duração do Build**              | Tempo necessário para concluir o processo de build          | Ajuda a identificar gargalos no pipeline                                           |
 
-
-## 🎯 2. Fundamentos das Métricas de CI/CD
-
-### O que são Métricas de CI/CD?
-
-As métricas de CI/CD são indicadores extraídos das etapas de Integração Contínua (CI) e Entrega Contínua (CD) de um pipeline de desenvolvimento de software. 
-
-Elas servem para medir e analisar o desempenho, a qualidade e a confiabilidade dos processos de construção, teste e entrega de software.
-
-Em outras palavras: as métricas dizem como está o “batimento cardíaco” do seu time DevOps.
-
-Essas métricas ajudam a entender:
-
-* Se o código está funcionando bem
-* Se o processo de entrega está rápido
-* Se há falhas recorrentes
-* Se o time está evoluindo ou estagnado
-
-
-### 🚀 Por que essas métricas são importantes? 
-
-#### 1) Tomada de decisão baseada em dados
-   
-* Evita decisões por “achismo”.
-* Permite ajustes precisos nos processos do time.
-
-#### 2) Melhoria Contínua
-   
-* Identifica pontos de gargalo e desperdício.
-* Serve como bússola para onde melhorar: build, testes, tempo de deploy, etc.**
-
-#### 3) Qualidade e Confiabilidade
-
-* Monitora a estabilidade das versões entregues.
-* Reduz riscos ao automatizar testes e deploys.
-
-#### 4) Visibilidade e transparência
-
-* Todos os membros do time enxergam a performance do pipeline e do produto.
-
-### 📊 Categorias de Métricas
-Para facilitar o entendimento e aplicação, as métricas de CI/CD podem ser agrupadas em quatro categorias principais:
-
-| **Categoria**  | **O que avalia**                                   | **Exemplos de Métricas**                               |
-|----------------|-----------------------------------------------------|---------------------------------------------------------|
-| **Eficiência** | Velocidade e produtividade do time                 | Lead Time, Duração do Build                             |
-| **Estabilidade** | Frequência e impacto de falhas                   | Taxa de Falhas de Mudança, MTTR                         |
-| **Tempo**      | Tempo total para concluir tarefas ou processos     | Tempo para Corrigir Testes, Tempo de Deploy             |
-| **Cobertura**  | Qualidade e abrangência dos testes                 | Cobertura de Código, Taxa de Sucesso dos Testes         |
-
-
-#### 💡Exemplo aplicado
-
-Imagine um time com entregas lentas e builds demorando 20 minutos:
-
-* Eficiência: está baixa (duração do build alta).
-* Cobertura: pode estar impactando, se muitos testes são lentos.
-* Com métricas bem definidas, o time identifica onde focar: otimizar testes ou dividir builds.
-
-#### 🧠 Pergunta para debate em sala:
-Se você tivesse que escolher uma única métrica para monitorar a saúde do seu pipeline, qual escolheria? E por quê?
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-### 3. Exemplos Práticos das Principais Métricas de CI/CD
+### Exemplos Práticos das Principais Métricas de CI/CD
 
 #### 🕒 Lead Time (Tempo de Entrega)
 Definição: Tempo entre o commit do desenvolvedor e a entrega em produção.
@@ -195,6 +130,72 @@ Definição: Porcentagem de implantações que falham no processo de deploy.
 De 5 execuções do job de deploy, 1 falhou por erro de configuração.
 <br>
 🟠 Taxa de Falhas de Implantação = 20%
+
+
+
+## 🎯 2. Fundamentos das Métricas de CI/CD
+
+### O que são Métricas de CI/CD?
+
+As métricas de CI/CD são indicadores extraídos das etapas de Integração Contínua (CI) e Entrega Contínua (CD) de um pipeline de desenvolvimento de software. 
+
+Elas servem para medir e analisar o desempenho, a qualidade e a confiabilidade dos processos de construção, teste e entrega de software.
+
+Em outras palavras: as métricas dizem como está o “batimento cardíaco” do seu time DevOps.
+
+Essas métricas ajudam a entender:
+
+* Se o código está funcionando bem
+* Se o processo de entrega está rápido
+* Se há falhas recorrentes
+* Se o time está evoluindo ou estagnado
+
+
+### 🚀 Por que essas métricas são importantes? 
+
+#### 1) Tomada de decisão baseada em dados
+   
+* Evita decisões por “achismo”.
+* Permite ajustes precisos nos processos do time.
+
+#### 2) Melhoria Contínua
+   
+* Identifica pontos de gargalo e desperdício.
+* Serve como bússola para onde melhorar: build, testes, tempo de deploy, etc.**
+
+#### 3) Qualidade e Confiabilidade
+
+* Monitora a estabilidade das versões entregues.
+* Reduz riscos ao automatizar testes e deploys.
+
+#### 4) Visibilidade e transparência
+
+* Todos os membros do time enxergam a performance do pipeline e do produto.
+
+### 📊 Categorias de Métricas
+Para facilitar o entendimento e aplicação, as métricas de CI/CD podem ser agrupadas em quatro categorias principais:
+
+| **Categoria**  | **O que avalia**                                   | **Exemplos de Métricas**                               |
+|----------------|-----------------------------------------------------|---------------------------------------------------------|
+| **Eficiência** | Velocidade e produtividade do time                 | Lead Time, Duração do Build                             |
+| **Estabilidade** | Frequência e impacto de falhas                   | Taxa de Falhas de Mudança, MTTR                         |
+| **Tempo**      | Tempo total para concluir tarefas ou processos     | Tempo para Corrigir Testes, Tempo de Deploy             |
+| **Cobertura**  | Qualidade e abrangência dos testes                 | Cobertura de Código, Taxa de Sucesso dos Testes         |
+
+
+#### 💡Exemplo aplicado
+
+Imagine um time com entregas lentas e builds demorando 20 minutos:
+
+* Eficiência: está baixa (duração do build alta).
+* Cobertura: pode estar impactando, se muitos testes são lentos.
+* Com métricas bem definidas, o time identifica onde focar: otimizar testes ou dividir builds.
+
+#### 🧠 Pergunta para debate em sala:
+Se você tivesse que escolher uma única métrica para monitorar a saúde do seu pipeline, qual escolheria? E por quê?
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ---
 
