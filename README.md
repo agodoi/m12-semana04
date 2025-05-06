@@ -43,7 +43,7 @@ A automação reduz riscos humanos, permitindo deploys frequentes e seguros.
 ### 💬 Discussão
 Quais métricas vocês acham que ajudam a provar que um time está melhorando sua entrega ao longo do tempo?
 
-<img src="https://github.com/agodoi/m12-semana04/imgs/graficoSubida.png" width="500">
+<img src="imgs/graficoSubida.png" width="500">
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
