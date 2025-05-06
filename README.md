@@ -263,7 +263,7 @@ O relatório pode ser enviado ao Codecov via GitHub Actions com um token e mostr
 <br>
 **Exemplo prático:** pipeline executada às 10h falha por causa de testes com jest. Alguém corrige o erro e faz novo push às 13h. O pipeline passa com 100% dos testes.
 <br>
-🟢 Tempo para Corrigir Testes = 3 horas
+🟢 Tempo para Corrigir Testes = 3 horas 
 <br>
 Você pode escrever um script que busca no histórico do Actions (via API) a última falha e o primeiro sucesso subsequente para esse mesmo job/teste.
 
