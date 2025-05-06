@@ -77,7 +77,7 @@ Essas métricas ajudam a entender:
 * Se o time está evoluindo ou estagnado
 
 
-#### 🚀 Por que essas métricas são importantes? 
+### 🚀 Por que essas métricas são importantes? 
 
 1) Tomada de decisão baseada em dados
    
