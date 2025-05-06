@@ -35,7 +35,7 @@ jobs:
     - name: Calcular duração do build
       run: |
         DURATION=$(( $JOB_ENDED_AT - $JOB_STARTED_AT ))
-        echo "⏱️ Duração total do job: $DURATION segundos"
+        echo "Duração total do job: $DURATION segundos"
         echo "BUILD_DURATION=$DURATION" >> $GITHUB_ENV
 
     - name: Exportar métrica para Prometheus (simulado)
@@ -45,5 +45,5 @@ jobs:
     - name: Condicional: falha ou sucesso dos testes
       if: env.TEST_SUCCESS != '0'
       run: |
-        echo "⚠️ Testes falharam. Tempo para corrigir deve ser monitorado!"
+        echo "Testes falharam. Tempo para corrigir deve ser monitorado!"
 
