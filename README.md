@@ -270,16 +270,103 @@ Você pode escrever um script que busca no histórico do Actions (via API) a úl
 
 
 
+### 🧪 5. Aplicação Prática no Repositório
+
+#### 🎯 Objetivo
+
+Aplicar métricas de CI/CD no seu projeto usando GitHub Actions, extraindo dados como duração do build, cobertura de código e taxa de sucesso de testes, e exibindo essas informações diretamente no repositório via badges ou dashboards.
+
+#### 🧩 Etapa 1 — Criação de um workflow no GitHub Actions
+
+📁 Crie o arquivo: .github/workflows/ci-metrics.yml
+
+```
+mkdir -p .github/workflows
+touch .github/workflows/ci-metrics.yml
+
+```
+✏️ Insira o conteúdo base do workflow [yaml]:
+
+```
+name: CI com Métricas
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Início do job
+      run: echo "JOB_STARTED_AT=$(date +%s)" >> $GITHUB_ENV
+
+    - name: Instalar dependências
+      run: npm install
+
+    - name: Rodar testes com cobertura
+      run: |
+        npm run test -- --coverage
+        echo "TEST_SUCCESS=$?" >> $GITHUB_ENV
+
+    - name: Enviar cobertura para Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Fim do job
+      run: echo "JOB_ENDED_AT=$(date +%s)" >> $GITHUB_ENV
+
+    - name: Calcular duração
+      run: |
+        DURATION=$(( $JOB_ENDED_AT - $JOB_STARTED_AT ))
+        echo "BUILD_DURATION=$DURATION" >> $GITHUB_ENV
+        echo "⏱️ Duração: $DURATION segundos"
+```
+
+#### 🧩 Etapa 2 — Armazenamento e visualização das métricas
+
+🧪 Cobertura de Código com Codecov
+
+* Crie uma conta no [https://codecov.io/](https://codecov.io/)
+* Registre seu repositório
+* Copie o token do projeto no painel
+* Adicione ao GitHub: vá em Settings > Secrets > Actions → Novo segredo
+* Nome: CODECOV_TOKEN
+* Valor: (o token que copiou)
+
+🎯 Exibir Badge no README
+* Após o primeiro push com cobertura, vá ao painel do Codecov
+* Copie o badge em formato Markdown
+* Cole no topo do seu README.md:
+
+```
+![Cobertura de Código](https://codecov.io/gh/USUARIO/REPO/branch/main/graph/badge.svg)
+```
+
+Substitua **USUARIO** e **REPO** com seu nome de usuário e nome do repositório.
+
+🧩 Etapa 3 — Documentação das Métricas no Repositório
+No README.md ou em uma pasta /docs/, documente:
+
+markdown
+Copiar
+Editar
+## 📊 Métricas de CI/CD Monitoradas
+
+- **Lead Time:** calculado por diferença entre horário de commit e execução do job.
+- **Duração do Build:** registrada automaticamente em segundos.
+- **Cobertura de Código:** coletada com Codecov.
+- **Taxa de Sucesso dos Testes:** interpretada via código de saída dos testes.
+- **Tempo para Corrigir Testes:** pode ser avaliado comparando o tempo entre a falha e a correção.
+
+📌 Os relatórios estão disponíveis nos logs do GitHub Actions e no painel do Codecov.
 
 
 
-### 5. Aplicação Prática no Repositório
 
-Criação de workflows no GitHub Actions para extrair métricas (ex.: duração de build, sucesso dos testes, cobertura com JaCoCo)
-
-Armazenamento e visualização (ex: YAML de exemplo, integração com Prometheus ou badge no README)
-
-Documentação no repositório GitHub sobre as métricas coletadas
 
 ### 6. Definindo Métricas com GQM/ATAM
 
