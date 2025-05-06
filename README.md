@@ -198,21 +198,24 @@ De 5 execuções do job de deploy, 1 falhou por erro de configuração.
 
 ---
 
-4. Instrumentação com GitHub Actions
+### 4. Instrumentação com GitHub Actions
+
 Quais métricas podem ser extraídas diretamente do GitHub Actions
 
 Limitações do GitHub Actions (o que não é possível monitorar diretamente)
 
 Ferramentas complementares: Prometheus, Grafana, Sentry
 
-5. Aplicação Prática no Repositório
+### 5. Aplicação Prática no Repositório
+
 Criação de workflows no GitHub Actions para extrair métricas (ex.: duração de build, sucesso dos testes, cobertura com JaCoCo)
 
 Armazenamento e visualização (ex: YAML de exemplo, integração com Prometheus ou badge no README)
 
 Documentação no repositório GitHub sobre as métricas coletadas
 
-6. Definindo Métricas com GQM/ATAM
+### 6. Definindo Métricas com GQM/ATAM
+
 Método Goal-Question-Metric (GQM)
 
 Método ATAM para avaliação de trade-offs de arquitetura
