@@ -59,9 +59,9 @@ Quais métricas vocês acham que ajudam a provar que um time está melhorando su
 | **Duração do Build**              | Tempo necessário para concluir o processo de build          | Ajuda a identificar gargalos no pipeline                                           |
 
 
-### 🎯 2. Fundamentos das Métricas de CI/CD
+## 🎯 2. Fundamentos das Métricas de CI/CD
 
-#### O que são Métricas de CI/CD?
+### O que são Métricas de CI/CD?
 
 As métricas de CI/CD são indicadores extraídos das etapas de Integração Contínua (CI) e Entrega Contínua (CD) de um pipeline de desenvolvimento de software. 
 
@@ -79,22 +79,22 @@ Essas métricas ajudam a entender:
 
 ### 🚀 Por que essas métricas são importantes? 
 
-1) Tomada de decisão baseada em dados
+#### 1) Tomada de decisão baseada em dados
    
 * Evita decisões por “achismo”.
 * Permite ajustes precisos nos processos do time.
 
-2) Melhoria Contínua
+#### 2) Melhoria Contínua
    
 * Identifica pontos de gargalo e desperdício.
 * Serve como bússola para onde melhorar: build, testes, tempo de deploy, etc.**
 
-3) Qualidade e Confiabilidade
+#### 3) Qualidade e Confiabilidade
 
 * Monitora a estabilidade das versões entregues.
 * Reduz riscos ao automatizar testes e deploys.
 
-4) Visibilidade e transparência
+#### 4) Visibilidade e transparência
 
 * Todos os membros do time enxergam a performance do pipeline e do produto.
 
