@@ -218,7 +218,7 @@ As principais métricas que podem ser instrumentadas diretamente:
 
 #### 🕒 Lead Time
 
-Como medir: timestamps do commit e do deploy
+**Como medir:** timestamps do commit e do deploy
 <br>
 **Exemplo prático:** um aluno faz um commit às 09h00 da manhã. O workflow executa testes e build automaticamente. O job de deploy ocorre às 11h15 no ambiente de staging.
 <br>
@@ -229,7 +229,7 @@ Você pode registrar o horário do commit com github.event.head_commit.timestamp
 ---
 #### 🧱 Duração do Build
 
-Como medir: tempo entre início e fim do job de build no GitHub Actions
+**Como medir:** tempo entre início e fim do job de build no GitHub Actions
 <br>
 **Exemplo prático:** o job de build começou às 14h02 e terminou às 14h09. No log do GitHub Actions, isso aparece automaticamente com o tempo total do job.
 <br>
@@ -239,7 +239,7 @@ Exibido direto no summary do GitHub Actions. Pode ser registrado em uma métrica
 
 ---
 #### ✅ Taxa de Sucesso dos Testes
-Como medir: Verificando exit codes dos frameworks de teste (ex: pytest, jest) e interpretando os relatórios
+**Como medir:** verificando exit codes dos frameworks de teste (ex: pytest, jest) e interpretando os relatórios
 <br>
 **Exemplo prático:** um job de testes executa 120 testes com pytest. 117 testes passaram e 3 falharam.
 <br>
@@ -249,7 +249,7 @@ Os resultados podem ser salvos com actions/upload-artifact, analisados com test-
 
 ---
 #### 🧪 Cobertura de Código
-Como medir: Usando ferramentas como JaCoCo, Codecov ou Coveralls integradas ao CI
+**Como medir:** usando ferramentas como JaCoCo, Codecov ou Coveralls integradas ao CI
 <br>
 **Exemplo prático:** o time configura JaCoCo em um projeto Java. Após o teste, JaCoCo gera um relatório: 80% das classes estão cobertas por testes.
 <br>
@@ -259,7 +259,7 @@ O relatório pode ser enviado ao Codecov via GitHub Actions com um token e mostr
 
 ---
 #### 🔁 Tempo para Corrigir Testes
-Como medir: comparar tempo entre a falha de um teste e a execução posterior que passou.
+**Como medir:** comparar tempo entre a falha de um teste e a execução posterior que passou.
 <br>
 **Exemplo prático:** pipeline executada às 10h falha por causa de testes com jest. Alguém corrige o erro e faz novo push às 13h. O pipeline passa com 100% dos testes.
 <br>
