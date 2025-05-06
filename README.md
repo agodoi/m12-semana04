@@ -76,6 +76,7 @@ Essas métricas ajudam a entender:
 * Se há falhas recorrentes
 * Se o time está evoluindo ou estagnado
 
+
 #### 🚀 Por que essas métricas são importantes? 
 
 1) Tomada de decisão baseada em dados
