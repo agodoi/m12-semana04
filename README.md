@@ -6,7 +6,7 @@ SLA & Métricas são indicadores que auxiliam gestores e times de desenvolviment
 
 Uma SLA (Service Level Agreement), ou Acordo de Nível de Serviço, é um compromisso formal entre duas partes — normalmente entre um fornecedor de serviço (como uma equipe de software ou empresa de TI) e um cliente (usuário, empresa contratante ou equipe interna) — que define quais níveis de desempenho, disponibilidade e suporte são esperados de um serviço.
 
-### ✅ Para que serve uma SLA?
+### (1.1) ✅ Para que serve uma SLA?
 
 a) Estabelecer expectativas claras: define o que o serviço vai garantir (por exemplo, 99,9% de disponibilidade, tempo de resposta de até 500ms, tempo máximo para resolver falhas).
 
@@ -22,15 +22,15 @@ e) Orientar o monitoramento e a melhoria contínua: permite que SLIs (indicadore
 
 “Nossa API de autenticação terá no mínimo 99,9% de disponibilidade por mês, com tempo médio de resposta inferior a 600ms, e qualquer falha crítica será resolvida em até 1 hora.”
 
-## (2) Outros tipos de Acordos
+### (1.2) Outros tipos de Acordos
 
-### (2.1) SLO — Service Level Objective (Objetivo de Nível de Serviço)
+#### (1.2.1) SLO — Service Level Objective (Objetivo de Nível de Serviço)
 
 É um objetivo interno e mensurável de performance ou confiabilidade. O SLO é o alvo que a equipe técnica ou a organização se compromete a alcançar regularmente, servindo como base para o SLA (mas nem todo SLO vira SLA).
 
 **Exemplo:** “Queremos que 95% das requisições sejam respondidas em menos de 400ms.”
 
-### (2.2) SLI — Service Level Indicator (Indicador de Nível de Serviço)
+#### (1.2.2) SLI — Service Level Indicator (Indicador de Nível de Serviço)
 
 É uma métrica real coletada do sistema, usada para verificar se o SLO está sendo atingido. O SLI é o dado cru medido por ferramentas de monitoramento (como Prometheus, Grafana, Datadog, etc.).
 
@@ -45,7 +45,7 @@ e) Orientar o monitoramento e a melhoria contínua: permite que SLIs (indicadore
 
 
 
-### 📄 Exemplo de SLA: API de Autenticação
+### (1.3) 📄 Exemplo de SLA: API de Autenticação
 
 **Descrição do Serviço**: a API de Autenticação é responsável por validar usuários e fornecer tokens de acesso para os sistemas internos e externos da plataforma.
 
@@ -57,7 +57,7 @@ e) Orientar o monitoramento e a melhoria contínua: permite que SLIs (indicadore
 | **Janela de Manutenção Programada** | Sábados, 2h às 4h   | Manutenção poderá ser feita sem impacto no SLA se ocorrer nesse período.      |
 
 
-### 📌 Fórmula geral para dois serviços interdependentes:
+### (1.4) 📌 Fórmula geral para dois serviços interdependentes:
 
 Se:
 
@@ -74,15 +74,15 @@ SLA final = SLA_A × SLA_B
 Essa abordagem reflete a probabilidade de ambos estarem disponíveis ao mesmo tempo, pois em sistemas em série, se um falha, o sistema como um todo falha.
 
 
-# 📄 Exemplo Completo de SLA
+### (1.5) 📄 Exemplo Completo de SLA
 
-## 1. 🧾 Descrição do Serviço
+## A. 🧾 Descrição do Serviço
 
 Este SLA se aplica ao serviço de **API de Autenticação**, responsável por validar usuários e fornecer tokens de acesso. O serviço será monitorado continuamente para garantir conformidade com os níveis acordados.
 
 ---
 
-## 2. 🎯 Nível de Serviço Acordado
+## B. 🎯 Nível de Serviço Acordado
 
 | **Métrica**                    | **Valor Garantido**              | **Descrição**                                                            |
 |-------------------------------|----------------------------------|--------------------------------------------------------------------------|
@@ -93,7 +93,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 
 ---
 
-## 3. 📏 Cálculo de Disponibilidade
+## C. 📏 Cálculo de Disponibilidade
 
 | **Nível de SLA** | **Máximo de indisponibilidade permitida (30 dias)** |
 |------------------|-----------------------------------------------------|
@@ -105,7 +105,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 
 ---
 
-## 4. ⚖️ Penalidades por Descumprimento
+## D. ⚖️ Penalidades por Descumprimento
 
 | **Disponibilidade Real** | **Crédito concedido ao cliente**       |
 |---------------------------|----------------------------------------|
@@ -115,7 +115,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 [CONTRATO AWS EC2](https://aws.amazon.com/pt/compute/sla/)
 ---
 
-## 5. 🧾 Exceções (Não contabilizam violação de SLA)
+## E. 🧾 Exceções (Não contabilizam violação de SLA)
 
 - Falhas causadas por erro de configuração do cliente
 - Ataques DDoS não mitigáveis
@@ -124,7 +124,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 
 ---
 
-## 6. 📊 Monitoramento e Medição
+## F. 📊 Monitoramento e Medição
 
 As métricas serão monitoradas continuamente por ferramentas como:
 - **Prometheus** para disponibilidade e latência
@@ -133,19 +133,24 @@ As métricas serão monitoradas continuamente por ferramentas como:
 
 Relatórios mensais serão gerados com base nos **SLIs (Service Level Indicators)** para verificar conformidade com os **SLOs (Service Level Objectives)** definidos.
 
+[AWS Status](https://health.aws.amazon.com/health/status)
+[Azure Status](https://azure.status.microsoft/pt-br/status)
+[Airbnb Status](https://airbnbapi.statuspage.io/)
+[Google Status](https://status.cloud.google.com/?hl=pt-br)
 ---
 
-## 7. 🔗 Validade do SLA
+## G. 🔗 Validade do SLA
 
 Este SLA entra em vigor a partir de sua assinatura e permanecerá válido enquanto o serviço estiver em operação, podendo ser revisto mediante acordo entre as partes.
 
 
 
+<br><br><br><br><br>
 
 
-## 1. Introdução ao DevOps e à Cultura de Métricas
+## (2) Introdução ao DevOps e à Cultura de Métricas
 
-### 🛠️ O que é DevOps (visão além da automação)
+### (2.1) 🛠️ O que é DevOps (visão além da automação)
 
 DevOps é uma abordagem cultural, organizacional e técnica que integra as equipes de desenvolvimento (Dev) e operações (Ops) com o objetivo de entregar software de forma mais rápida, confiável e contínua.
 
@@ -153,37 +158,37 @@ Embora muitas pessoas associem DevOps apenas à automação de builds e deploys,
 
 🔎 Exemplo: Em vez de uma equipe de desenvolvimento passar o código para outra equipe “resolver” o deploy, ambas colaboram desde o início, com pipelines automatizados, testes contínuos e visibilidade compartilhada.
 
-### 🌍 Benefícios organizacionais e culturais do DevOps
+### (2.2) 🌍 Benefícios organizacionais e culturais do DevOps
 
 Adotar DevOps vai além de ferramentas como GitHub Actions, Jenkins ou Azure DevOps. Trata-se de transformar a cultura da empresa ou do time:
 
-#### 1. Agilidade na entrega de valor
+#### (2.2.1) Agilidade na entrega de valor
 Reduz o tempo entre escrever o código e entregá-lo ao usuário final.
 
-#### 2. Melhoria da qualidade do software
+#### (2.2.2) Melhoria da qualidade do software
 Ao incluir testes automatizados e feedback contínuo, a chance de bugs em produção diminui.
 
 <img src="https://github.com/agodoi/m12-semana04/blob/main/imgs/taxaFalhavsTempo.png" width="500">
 
-#### 3. Colaboração interfuncional
+#### (2.2.3) Colaboração interfuncional
 Desenvolvedores e operadores trabalham juntos, compartilhando métricas, responsabilidades e decisões.
 
-#### 4. Resiliência e recuperação rápida
+#### (2.2.4) Resiliência e recuperação rápida
 Incidentes são monitorados e resolvidos com mais rapidez.
 
-#### 5. Inovação com segurança
+#### (2.2.5) Inovação com segurança
 A automação reduz riscos humanos, permitindo deploys frequentes e seguros.
 
 🧠 Cultura DevOps = Comunicação + Colaboração + Feedback + Confiança + Automação
 
-### 💬 Discussão
+### (2.3)💬 Discussão
 Quais métricas vocês acham que ajudam a provar que um time está melhorando sua entrega ao longo do tempo?
 
 <img src="https://github.com/agodoi/m12-semana04/blob/main/imgs/graficoSubida.png" width="500">
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 📊 Quadro Comparativo — Métricas de DevOps
+### (2.4) 📊 Quadro Comparativo — Métricas de DevOps
 
 | **Métrica**                        | **O que mede**                                             | **Por que é útil**                                                                 |
 |-----------------------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------|
@@ -195,9 +200,9 @@ Quais métricas vocês acham que ajudam a provar que um time está melhorando su
 | **Taxa de Falhas de Mudança**     | % de deploys que causam falhas                              | Mostra a confiabilidade das entregas                                               |
 | **Duração do Build**              | Tempo necessário para concluir o processo de build          | Ajuda a identificar gargalos no pipeline                                           |
 
-### Exemplos Práticos das Principais Métricas de CI/CD
+### (2.5) Exemplos Práticos das Principais Métricas de CI/CD
 
-#### 🕒 Lead Time (Tempo de Entrega)
+#### (2.5.1) 🕒 Lead Time (Tempo de Entrega)
 Definição: Tempo entre o commit do desenvolvedor e a entrega em produção.
 <br>
 **Exemplo:**
@@ -206,7 +211,7 @@ João fez um commit às 10h da manhã. Após passar pelo pipeline (build, testes
 🟢 Lead Time = 4 horas
 
 ---
-#### 📈 Frequência de Implantação (Deploy Frequency)
+#### (2.5.2) 📈 Frequência de Implantação (Deploy Frequency)
 Definição: Quantas vezes o time entrega código em produção num determinado período.
 <br>
 **Exemplo:**
@@ -215,7 +220,7 @@ Na última semana, o time fez 12 deploys no ambiente de produção.
 🟢 Frequência de Implantação = 12 por semana
 
 ---
-#### ❌ Taxa de Falhas de Mudança (Change Failure Rate)
+#### (2.5.3) ❌ Taxa de Falhas de Mudança (Change Failure Rate)
 Definição: Porcentagem de mudanças implantadas que causaram falha.
 <br>
 **Exemplo:**
@@ -224,7 +229,7 @@ De 10 deploys feitos, 2 causaram erros em produção e precisaram de correção 
 🟠 Taxa de Falhas de Mudança = 20%
 
 ---
-#### 🔧 Tempo Médio de Recuperação (MTTR)
+#### (2.5.4) 🔧 Tempo Médio de Recuperação (MTTR)
 Definição: Tempo médio para restaurar o sistema após uma falha em produção.
 <br>
 **Exemplo:**
@@ -233,7 +238,7 @@ Um bug derrubou o sistema às 15h, e foi resolvido às 15h40.
 🟢 MTTR = 40 minutos
 
 ---
-#### 🧪 Cobertura de Código
+#### (2.5.5) 🧪 Cobertura de Código
 Definição: Percentual do código coberto por testes automatizados.
 <br>
 **Exemplo:**
@@ -242,7 +247,7 @@ Com uso de JaCoCo, o time viu que 78% das funções têm testes automatizados.
 🟢 Cobertura = 78%
 
 ---
-#### ✅ Taxa de Sucesso dos Testes
+#### (2.5.6) ✅ Taxa de Sucesso dos Testes
 Definição: Percentual de testes que passaram em uma execução.
 <br>
 **Exemplo:**
@@ -251,7 +256,7 @@ Num pipeline com 200 testes, 192 passaram.
 🟢 Taxa de Sucesso = 96%
 
 ---
-#### 🧱 Duração do Build
+#### (2.5.7) 🧱 Duração do Build
 Definição: Tempo necessário para compilar e empacotar a aplicação.
 <br>
 **Exemplo:**
@@ -260,7 +265,7 @@ O GitHub Actions indica que a execução do job de build leva 7 minutos.
 🟢 Duração do Build = 7 minutos
 
 ---
-#### 💥 Taxa de Falhas de Implantação
+#### (2.5.8) 💥 Taxa de Falhas de Implantação
 Definição: Porcentagem de implantações que falham no processo de deploy.
 <br>
 **Exemplo:**
@@ -270,7 +275,7 @@ De 5 execuções do job de deploy, 1 falhou por erro de configuração.
 
 
 
-## 🎯 2. Fundamentos das Métricas de CI/CD
+### 🎯 2. Fundamentos das Métricas de CI/CD
 
 ### O que são Métricas de CI/CD?
 
