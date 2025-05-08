@@ -138,9 +138,13 @@ As métricas serão monitoradas continuamente por ferramentas como:
 Relatórios mensais serão gerados com base nos **SLIs (Service Level Indicators)** para verificar conformidade com os **SLOs (Service Level Objectives)** definidos.
 
 [AWS Status](https://health.aws.amazon.com/health/status)
+
 [Azure Status](https://azure.status.microsoft/pt-br/status)
+
 [Airbnb Status](https://airbnbapi.statuspage.io/)
+
 [Google Status](https://status.cloud.google.com/?hl=pt-br)
+
 ---
 
 ### G. 🔗 Validade do SLA
