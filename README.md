@@ -97,9 +97,9 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 
 | **Nível de SLA** | **Máximo de indisponibilidade permitida (30 dias)** |
 |------------------|-----------------------------------------------------|
-| 99,0%            | ~7h18min                                            |
+| 99,0%            | 7h12min                                            |
 | 99,9%            | ~43min                                              |
-| 99,99%           | ~4min                                               |
+| 99,99%           | ~4,3min                                               |
 
 > Cálculo: `(1 - SLA) × minutos no mês (30 dias = 43.200 minutos)`
 
