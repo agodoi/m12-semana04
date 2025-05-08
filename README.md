@@ -2,6 +2,146 @@
 
 SLA & Métricas são indicadores que auxiliam gestores e times de desenvolvimento a definir a estratégia de evolução e na operção dos produtos de software que mantém as empresas ativas. Nesta instrução iremos recuperar estes conceitos importantes na rotina de engenharia de software.
 
+## (1) SLA (Service Level Agreement) 
+
+Uma SLA (Service Level Agreement), ou Acordo de Nível de Serviço, é um compromisso formal entre duas partes — normalmente entre um fornecedor de serviço (como uma equipe de software ou empresa de TI) e um cliente (usuário, empresa contratante ou equipe interna) — que define quais níveis de desempenho, disponibilidade e suporte são esperados de um serviço.
+
+### ✅ Para que serve uma SLA?
+
+a) Estabelecer expectativas claras: define o que o serviço vai garantir (por exemplo, 99,9% de disponibilidade, tempo de resposta de até 500ms, tempo máximo para resolver falhas).
+
+b) Formalizar compromissos técnicos: tira o acordo do “achismo” e transforma-o em um contrato mensurável e rastreável.
+
+c) Aumentar a confiança entre as partes: mostra que o fornecedor se compromete com qualidade, e o cliente sabe o que pode cobrar.
+
+d) Proteger ambas as partes: serve como base jurídica para acordos comerciais e evita conflitos por mal-entendidos.
+
+e) Orientar o monitoramento e a melhoria contínua: permite que SLIs (indicadores reais) sejam acompanhados para garantir que os SLOs (objetivos) estão sendo cumpridos.
+
+**📌 Exemplo prático:**
+
+“Nossa API de autenticação terá no mínimo 99,9% de disponibilidade por mês, com tempo médio de resposta inferior a 600ms, e qualquer falha crítica será resolvida em até 1 hora.”
+
+## (2) Outros tipos de Acordos
+
+### (2.1) SLO — Service Level Objective (Objetivo de Nível de Serviço)
+
+É um objetivo interno e mensurável de performance ou confiabilidade. O SLO é o alvo que a equipe técnica ou a organização se compromete a alcançar regularmente, servindo como base para o SLA (mas nem todo SLO vira SLA).
+
+**Exemplo:** “Queremos que 95% das requisições sejam respondidas em menos de 400ms.”
+
+### (2.2) SLI — Service Level Indicator (Indicador de Nível de Serviço)
+
+É uma métrica real coletada do sistema, usada para verificar se o SLO está sendo atingido. O SLI é o dado cru medido por ferramentas de monitoramento (como Prometheus, Grafana, Datadog, etc.).
+
+**Exemplo:** “Na última semana, a latência média foi de 380ms, e 96,2% das requisições foram respondidas em menos de 400ms.
+
+
+| Conceito | Papel no ciclo                                                  |
+| -------- | --------------------------------------------------------------- |
+| **SLI**  | Métrica observada (realidade medida)                            |
+| **SLO**  | Meta desejada baseada nos SLIs                                  |
+| **SLA**  | Acordo formal que define o que é garantido e suas consequências |
+
+
+
+### 📄 Exemplo de SLA: API de Autenticação
+
+**Descrição do Serviço**: a API de Autenticação é responsável por validar usuários e fornecer tokens de acesso para os sistemas internos e externos da plataforma.
+
+| **Métrica**                         | **Valor Garantido** | **Descrição**                                                                 |
+| ----------------------------------- | ------------------- | ----------------------------------------------------------------------------- |
+| **Disponibilidade Mensal**          | 99,9%               | O serviço estará disponível pelo menos 99,9% do tempo em cada mês calendário. |
+| **Tempo Máximo de Resposta**        | 500ms               | Tempo máximo para resposta da API em 95% das requisições.                     |
+| **Tempo de Recuperação (MTTR)**     | Até 30 minutos      | Em caso de falha crítica, o serviço será restabelecido em até 30 minutos.     |
+| **Janela de Manutenção Programada** | Sábados, 2h às 4h   | Manutenção poderá ser feita sem impacto no SLA se ocorrer nesse período.      |
+
+
+### 📌 Fórmula geral para dois serviços interdependentes:
+
+Se:
+
+Serviço A tem SLA = 99,9% (ou 0,999)
+
+Serviço B tem SLA = 99,5% (ou 0,995)
+
+Então:
+
+SLA final = SLA_A × SLA_B
+          = 0,999 × 0,995
+          = 0,994005 → 99,4005%
+
+Essa abordagem reflete a probabilidade de ambos estarem disponíveis ao mesmo tempo, pois em sistemas em série, se um falha, o sistema como um todo falha.
+
+
+# 📄 Exemplo Completo de SLA
+
+## 1. 🧾 Descrição do Serviço
+
+Este SLA se aplica ao serviço de **API de Autenticação**, responsável por validar usuários e fornecer tokens de acesso. O serviço será monitorado continuamente para garantir conformidade com os níveis acordados.
+
+---
+
+## 2. 🎯 Nível de Serviço Acordado
+
+| **Métrica**                    | **Valor Garantido**              | **Descrição**                                                            |
+|-------------------------------|----------------------------------|--------------------------------------------------------------------------|
+| **Disponibilidade mensal**    | 99,9%                            | O serviço estará disponível pelo menos 99,9% do tempo por mês            |
+| **Tempo de resposta médio**   | ≤ 500ms                          | Média de tempo para resposta da API em 95% das requisições              |
+| **Tempo máximo para recuperação (MTTR)** | ≤ 30 minutos         | Tempo máximo para restabelecimento após falha crítica                    |
+| **Janela de manutenção**      | Sábados, entre 2h e 4h           | Período reservado para manutenção sem impacto no SLA                     |
+
+---
+
+## 3. 📏 Cálculo de Disponibilidade
+
+| **Nível de SLA** | **Máximo de indisponibilidade permitida (30 dias)** |
+|------------------|-----------------------------------------------------|
+| 99,0%            | ~7h18min                                            |
+| 99,9%            | ~43min                                              |
+| 99,99%           | ~4min                                               |
+
+> Cálculo: `(1 - SLA) × minutos no mês (30 dias = 43.200 minutos)`
+
+---
+
+## 4. ⚖️ Penalidades por Descumprimento
+
+| **Disponibilidade Real** | **Crédito concedido ao cliente**       |
+|---------------------------|----------------------------------------|
+| 99,0% a 99,8%             | 10% de desconto no valor mensal        |
+| Abaixo de 99,0%           | 25% de desconto no valor mensal        |
+
+---
+
+## 5. 🧾 Exceções (Não contabilizam violação de SLA)
+
+- Falhas causadas por erro de configuração do cliente
+- Ataques DDoS não mitigáveis
+- Desastres naturais ou eventos de força maior
+- Interrupções causadas durante a janela de manutenção programada
+
+---
+
+## 6. 📊 Monitoramento e Medição
+
+As métricas serão monitoradas continuamente por ferramentas como:
+- **Prometheus** para disponibilidade e latência
+- **Grafana** para dashboards em tempo real
+- **Sentry** para rastreamento de erros em produção
+
+Relatórios mensais serão gerados com base nos **SLIs (Service Level Indicators)** para verificar conformidade com os **SLOs (Service Level Objectives)** definidos.
+
+---
+
+## 7. 🔗 Validade do SLA
+
+Este SLA entra em vigor a partir de sua assinatura e permanecerá válido enquanto o serviço estiver em operação, podendo ser revisto mediante acordo entre as partes.
+
+
+
+
+
 ## 1. Introdução ao DevOps e à Cultura de Métricas
 
 ### 🛠️ O que é DevOps (visão além da automação)
