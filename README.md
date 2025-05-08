@@ -80,13 +80,13 @@ Essa abordagem reflete a probabilidade de ambos estarem disponíveis ao mesmo te
 
 ### (1.5) 📄 Exemplo Completo de SLA
 
-## A. 🧾 Descrição do Serviço
+### A. 🧾 Descrição do Serviço
 
 Este SLA se aplica ao serviço de **API de Autenticação**, responsável por validar usuários e fornecer tokens de acesso. O serviço será monitorado continuamente para garantir conformidade com os níveis acordados.
 
 ---
 
-## B. 🎯 Nível de Serviço Acordado
+### B. 🎯 Nível de Serviço Acordado
 
 | **Métrica**                    | **Valor Garantido**              | **Descrição**                                                            |
 |-------------------------------|----------------------------------|--------------------------------------------------------------------------|
@@ -97,7 +97,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 
 ---
 
-## C. 📏 Cálculo de Disponibilidade
+### C. 📏 Cálculo de Disponibilidade
 
 | **Nível de SLA** | **Máximo de indisponibilidade permitida (30 dias)** |
 |------------------|-----------------------------------------------------|
@@ -109,7 +109,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 
 ---
 
-## D. ⚖️ Penalidades por Descumprimento
+### D. ⚖️ Penalidades por Descumprimento
 
 | **Disponibilidade Real** | **Crédito concedido ao cliente**       |
 |---------------------------|----------------------------------------|
@@ -119,7 +119,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 [CONTRATO AWS EC2](https://aws.amazon.com/pt/compute/sla/)
 ---
 
-## E. 🧾 Exceções (Não contabilizam violação de SLA)
+### E. 🧾 Exceções (Não contabilizam violação de SLA)
 
 - Falhas causadas por erro de configuração do cliente
 - Ataques DDoS não mitigáveis
@@ -128,7 +128,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 
 ---
 
-## F. 📊 Monitoramento e Medição
+### F. 📊 Monitoramento e Medição
 
 As métricas serão monitoradas continuamente por ferramentas como:
 - **Prometheus** para disponibilidade e latência
@@ -143,7 +143,7 @@ Relatórios mensais serão gerados com base nos **SLIs (Service Level Indicators
 [Google Status](https://status.cloud.google.com/?hl=pt-br)
 ---
 
-## G. 🔗 Validade do SLA
+### G. 🔗 Validade do SLA
 
 Este SLA entra em vigor a partir de sua assinatura e permanecerá válido enquanto o serviço estiver em operação, podendo ser revisto mediante acordo entre as partes.
 
