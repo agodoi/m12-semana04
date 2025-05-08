@@ -190,103 +190,10 @@ A automação reduz riscos humanos, permitindo deploys frequentes e seguros.
 
 🧠 Cultura DevOps = Comunicação + Colaboração + Feedback + Confiança + Automação
 
-### (2.3)💬 Discussão
-Quais métricas vocês acham que ajudam a provar que um time está melhorando sua entrega ao longo do tempo?
 
-<img src="https://github.com/agodoi/m12-semana04/blob/main/imgs/graficoSubida.png" width="500">
+## (3) 🎯 Fundamentos das Métricas de CI/CD
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-### (2.4) 📊 Quadro Comparativo — Métricas de DevOps
-
-| **Métrica**                        | **O que mede**                                             | **Por que é útil**                                                                 |
-|-----------------------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| **Lead Time**                     | Tempo do commit ao deploy                                   | Avalia a eficiência de entrega; menor tempo = maior agilidade                      |
-| **Frequência de Implantação**     | Nº de deploys por período                                   | Indica a capacidade de entrega contínua e feedback rápido                          |
-| **Taxa de Sucesso dos Testes**    | % de testes automatizados que passam                        | Reflete a estabilidade do código e qualidade dos testes                            |
-| **Cobertura de Código**           | % do código coberto por testes                              | Ajuda a garantir que o código está minimamente validado por testes                 |
-| **MTTR (Tempo Médio de Recuperação)** | Tempo para restaurar o sistema após falha              | Mede a resiliência e capacidade de resposta a incidentes                           |
-| **Taxa de Falhas de Mudança**     | % de deploys que causam falhas                              | Mostra a confiabilidade das entregas                                               |
-| **Duração do Build**              | Tempo necessário para concluir o processo de build          | Ajuda a identificar gargalos no pipeline                                           |
-
-### (2.5) Exemplos Práticos das Principais Métricas de CI/CD
-
-#### (2.5.1) 🕒 Lead Time (Tempo de Entrega)
-Definição: Tempo entre o commit do desenvolvedor e a entrega em produção.
-<br>
-**Exemplo:**
-João fez um commit às 10h da manhã. Após passar pelo pipeline (build, testes, revisão, deploy), a funcionalidade foi ao ar às 14h.
-<br>
-🟢 Lead Time = 4 horas
-
----
-#### (2.5.2) 📈 Frequência de Implantação (Deploy Frequency)
-Definição: Quantas vezes o time entrega código em produção num determinado período.
-<br>
-**Exemplo:**
-Na última semana, o time fez 12 deploys no ambiente de produção.
-<br>
-🟢 Frequência de Implantação = 12 por semana
-
----
-#### (2.5.3) ❌ Taxa de Falhas de Mudança (Change Failure Rate)
-Definição: Porcentagem de mudanças implantadas que causaram falha.
-<br>
-**Exemplo:**
-De 10 deploys feitos, 2 causaram erros em produção e precisaram de correção imediata.
-<br>
-🟠 Taxa de Falhas de Mudança = 20%
-
----
-#### (2.5.4) 🔧 Tempo Médio de Recuperação (MTTR)
-Definição: Tempo médio para restaurar o sistema após uma falha em produção.
-<br>
-**Exemplo:**
-Um bug derrubou o sistema às 15h, e foi resolvido às 15h40.
-<br>
-🟢 MTTR = 40 minutos
-
----
-#### (2.5.5) 🧪 Cobertura de Código
-Definição: Percentual do código coberto por testes automatizados.
-<br>
-**Exemplo:**
-Com uso de JaCoCo, o time viu que 78% das funções têm testes automatizados.
-<br>
-🟢 Cobertura = 78%
-
----
-#### (2.5.6) ✅ Taxa de Sucesso dos Testes
-Definição: Percentual de testes que passaram em uma execução.
-<br>
-**Exemplo:**
-Num pipeline com 200 testes, 192 passaram.
-<br>
-🟢 Taxa de Sucesso = 96%
-
----
-#### (2.5.7) 🧱 Duração do Build
-Definição: Tempo necessário para compilar e empacotar a aplicação.
-<br>
-**Exemplo:**
-O GitHub Actions indica que a execução do job de build leva 7 minutos.
-<br>
-🟢 Duração do Build = 7 minutos
-
----
-#### (2.5.8) 💥 Taxa de Falhas de Implantação
-Definição: Porcentagem de implantações que falham no processo de deploy.
-<br>
-**Exemplo:**
-De 5 execuções do job de deploy, 1 falhou por erro de configuração.
-<br>
-🟠 Taxa de Falhas de Implantação = 20%
-
-
-
-### 🎯 2. Fundamentos das Métricas de CI/CD
-
-### O que são Métricas de CI/CD?
+### (3.1) O que são Métricas de CI/CD?
 
 As métricas de CI/CD são indicadores extraídos das etapas de Integração Contínua (CI) e Entrega Contínua (CD) de um pipeline de desenvolvimento de software. 
 
@@ -302,28 +209,28 @@ Essas métricas ajudam a entender:
 * Se o time está evoluindo ou estagnado
 
 
-### 🚀 Por que essas métricas são importantes? 
+### (3.2) 🚀 Por que essas métricas são importantes? 
 
-#### 1) Tomada de decisão baseada em dados
+#### (3.2.1) Tomada de decisão baseada em dados
    
 * Evita decisões por “achismo”.
 * Permite ajustes precisos nos processos do time.
 
-#### 2) Melhoria Contínua
+#### (3.2.2) Melhoria Contínua
    
 * Identifica pontos de gargalo e desperdício.
 * Serve como bússola para onde melhorar: build, testes, tempo de deploy, etc.**
 
-#### 3) Qualidade e Confiabilidade
+#### (3.2.3) Qualidade e Confiabilidade
 
 * Monitora a estabilidade das versões entregues.
 * Reduz riscos ao automatizar testes e deploys.
 
-#### 4) Visibilidade e transparência
+#### (3.2.4) Visibilidade e transparência
 
 * Todos os membros do time enxergam a performance do pipeline e do produto.
 
-### 📊 Categorias de Métricas
+### (3.3) 📊 Categorias de Métricas
 Para facilitar o entendimento e aplicação, as métricas de CI/CD podem ser agrupadas em quatro categorias principais:
 
 | **Categoria**  | **O que avalia**                                   | **Exemplos de Métricas**                               |
@@ -334,7 +241,7 @@ Para facilitar o entendimento e aplicação, as métricas de CI/CD podem ser agr
 | **Cobertura**  | Qualidade e abrangência dos testes                 | Cobertura de Código, Taxa de Sucesso dos Testes         |
 
 
-#### 💡Exemplo aplicado
+#### (3.3.1) 💡Exemplo aplicado
 
 Imagine um time com entregas lentas e builds demorando 20 minutos:
 
@@ -342,15 +249,105 @@ Imagine um time com entregas lentas e builds demorando 20 minutos:
 * Cobertura: pode estar impactando, se muitos testes são lentos.
 * Com métricas bem definidas, o time identifica onde focar: otimizar testes ou dividir builds.
 
-#### 🧠 Pergunta para debate em sala:
+#### (3.4) 🧠 Pergunta para debate em sala:
 Se você tivesse que escolher uma única métrica para monitorar a saúde do seu pipeline, qual escolheria? E por quê?
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
+
+
+
+
+### (3.5) 📊 Quadro Comparativo — Métricas de DevOps
+
+| **Métrica**                        | **O que mede**                                             | **Por que é útil**                                                                 |
+|-----------------------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| **Lead Time**                     | Tempo do commit ao deploy                                   | Avalia a eficiência de entrega; menor tempo = maior agilidade                      |
+| **Frequência de Implantação**     | Nº de deploys por período                                   | Indica a capacidade de entrega contínua e feedback rápido                          |
+| **Taxa de Sucesso dos Testes**    | % de testes automatizados que passam                        | Reflete a estabilidade do código e qualidade dos testes                            |
+| **Cobertura de Código**           | % do código coberto por testes                              | Ajuda a garantir que o código está minimamente validado por testes                 |
+| **MTTR (Tempo Médio de Recuperação)** | Tempo para restaurar o sistema após falha              | Mede a resiliência e capacidade de resposta a incidentes                           |
+| **Taxa de Falhas de Mudança**     | % de deploys que causam falhas                              | Mostra a confiabilidade das entregas                                               |
+| **Duração do Build**              | Tempo necessário para concluir o processo de build          | Ajuda a identificar gargalos no pipeline                                           |
+
+### (3.6) Exemplos Práticos das Principais Métricas de CI/CD
+
+#### (3.6.1) 🕒 Lead Time (Tempo de Entrega)
+Definição: Tempo entre o commit do desenvolvedor e a entrega em produção.
+<br>
+**Exemplo:**
+João fez um commit às 10h da manhã. Após passar pelo pipeline (build, testes, revisão, deploy), a funcionalidade foi ao ar às 14h.
+<br>
+🟢 Lead Time = 4 horas
+
+---
+#### (3.6.2) 📈 Frequência de Implantação (Deploy Frequency)
+Definição: Quantas vezes o time entrega código em produção num determinado período.
+<br>
+**Exemplo:**
+Na última semana, o time fez 12 deploys no ambiente de produção.
+<br>
+🟢 Frequência de Implantação = 12 por semana
+
+---
+#### (3.6.3) ❌ Taxa de Falhas de Mudança (Change Failure Rate)
+Definição: Porcentagem de mudanças implantadas que causaram falha.
+<br>
+**Exemplo:**
+De 10 deploys feitos, 2 causaram erros em produção e precisaram de correção imediata.
+<br>
+🟠 Taxa de Falhas de Mudança = 20%
+
+---
+#### (3.6.4) 🔧 Tempo Médio de Recuperação (MTTR)
+Definição: Tempo médio para restaurar o sistema após uma falha em produção.
+<br>
+**Exemplo:**
+Um bug derrubou o sistema às 15h, e foi resolvido às 15h40.
+<br>
+🟢 MTTR = 40 minutos
+
+---
+#### (3.6.5) 🧪 Cobertura de Código
+Definição: Percentual do código coberto por testes automatizados.
+<br>
+**Exemplo:**
+Com uso de JaCoCo, o time viu que 78% das funções têm testes automatizados.
+<br>
+🟢 Cobertura = 78%
+
+---
+#### (3.6.6) ✅ Taxa de Sucesso dos Testes
+Definição: Percentual de testes que passaram em uma execução.
+<br>
+**Exemplo:**
+Num pipeline com 200 testes, 192 passaram.
+<br>
+🟢 Taxa de Sucesso = 96%
+
+---
+#### (3.6.7) 🧱 Duração do Build
+Definição: Tempo necessário para compilar e empacotar a aplicação.
+<br>
+**Exemplo:**
+O GitHub Actions indica que a execução do job de build leva 7 minutos.
+<br>
+🟢 Duração do Build = 7 minutos
+
+---
+#### (3.6.8) 💥 Taxa de Falhas de Implantação
+Definição: Porcentagem de implantações que falham no processo de deploy.
+<br>
+**Exemplo:**
+De 5 execuções do job de deploy, 1 falhou por erro de configuração.
+<br>
+🟠 Taxa de Falhas de Implantação = 20%
+
+
 ---
 
-### 4. Instrumentação com GitHub Actions
+## (4) Instrumentação com GitHub Actions
 
 O **GitHub Actions** é uma poderosa plataforma de automação para CI/CD, e oferece acesso a logs, tempos de execução e status dos jobs de forma nativa. Isso permite que várias métricas sejam extraídas diretamente dos seus workflows.
 
@@ -367,7 +364,7 @@ As principais métricas que podem ser instrumentadas diretamente:
 
 
 
-#### 🕒 Lead Time
+### (4.1) 🕒 Lead Time
 
 **Como medir:** timestamps do commit e do deploy
 <br>
@@ -378,7 +375,7 @@ As principais métricas que podem ser instrumentadas diretamente:
 Você pode registrar o horário do commit com github.event.head_commit.timestamp e o horário do fim do deploy com steps.deploy.completed_at.
 
 ---
-#### 🧱 Duração do Build
+### (4.2) 🧱 Duração do Build
 
 **Como medir:** tempo entre início e fim do job de build no GitHub Actions
 <br>
@@ -389,7 +386,7 @@ Você pode registrar o horário do commit com github.event.head_commit.timestamp
 Exibido direto no summary do GitHub Actions. Pode ser registrado em uma métrica com Prometheus.
 
 ---
-#### ✅ Taxa de Sucesso dos Testes
+### (4.3) ✅ Taxa de Sucesso dos Testes
 **Como medir:** verificando exit codes dos frameworks de teste (ex: pytest, jest) e interpretando os relatórios
 <br>
 **Exemplo prático:** um job de testes executa 120 testes com pytest. 117 testes passaram e 3 falharam.
@@ -399,7 +396,7 @@ Exibido direto no summary do GitHub Actions. Pode ser registrado em uma métrica
 Os resultados podem ser salvos com actions/upload-artifact, analisados com test-reporter ou enviados ao Codecov.
 
 ---
-#### 🧪 Cobertura de Código
+### (4.4) 🧪 Cobertura de Código
 **Como medir:** usando ferramentas como JaCoCo, Codecov ou Coveralls integradas ao CI
 <br>
 **Exemplo prático:** o time configura JaCoCo em um projeto Java. Após o teste, JaCoCo gera um relatório: 80% das classes estão cobertas por testes.
@@ -409,7 +406,7 @@ Os resultados podem ser salvos com actions/upload-artifact, analisados com test-
 O relatório pode ser enviado ao Codecov via GitHub Actions com um token e mostrado em forma de badge no README.
 
 ---
-#### 🔁 Tempo para Corrigir Testes
+### (4.5) 🔁 Tempo para Corrigir Testes
 **Como medir:** comparar tempo entre a falha de um teste e a execução posterior que passou.
 <br>
 **Exemplo prático:** pipeline executada às 10h falha por causa de testes com jest. Alguém corrige o erro e faz novo push às 13h. O pipeline passa com 100% dos testes.
@@ -421,13 +418,13 @@ Você pode escrever um script que busca no histórico do Actions (via API) a úl
 
 
 
-### 🧪 5. Aplicação Prática no Repositório
+## (5) 🧪 Aplicação Prática no Repositório
 
-#### 🎯 Objetivo
+### (5.1) 🎯 Objetivo
 
 Aplicar métricas de CI/CD no seu projeto usando GitHub Actions, extraindo dados como duração do build, cobertura de código e taxa de sucesso de testes, e exibindo essas informações diretamente no repositório via badges ou dashboards.
 
-#### 🧩 Etapa 1 — Criação de um workflow no GitHub Actions
+### (5.2) 🧩 Etapa 1 — Criação de um workflow no GitHub Actions
 
 📁 Crie o arquivo: .github/workflows/ci-metrics.yml
 
@@ -477,7 +474,7 @@ jobs:
         echo "⏱️ Duração: $DURATION segundos"
 ```
 
-#### 🧩 Etapa 2 — Armazenamento e visualização das métricas
+### (5.3) 🧩 Etapa 2 — Armazenamento e visualização das métricas
 
 🧪 Cobertura de Código com Codecov
 
@@ -499,13 +496,11 @@ jobs:
 
 Substitua **USUARIO** e **REPO** com seu nome de usuário e nome do repositório.
 
-🧩 Etapa 3 — Documentação das Métricas no Repositório
+### (5.4)🧩 Etapa 3 — Documentação das Métricas no Repositório
+
 No README.md ou em uma pasta /docs/, documente:
 
-markdown
-Copiar
-Editar
-## 📊 Métricas de CI/CD Monitoradas
+#### (5.4.1) 📊 Métricas de CI/CD Monitoradas
 
 - **Lead Time:** calculado por diferença entre horário de commit e execução do job.
 - **Duração do Build:** registrada automaticamente em segundos.
@@ -515,14 +510,154 @@ Editar
 
 📌 Os relatórios estão disponíveis nos logs do GitHub Actions e no painel do Codecov.
 
+### (5.5) Exemplo de Dashboard de Métricas
 
+[exemplo](https://github.com/bxtp4p/github-server-stats-prometheus-grafana-dashboard)
 
+## 6. Definindo Métricas com GQM/ATAM
 
+Para encerrar a aula, vamos entender o uso dos métodos **GQM e ATAM** que é uma excelente forma de desenvolver a capacidade de justificar tecnicamente a escolha de métricas, conectando-as com os objetivos do sistema.
 
-### 6. Definindo Métricas com GQM/ATAM
+### (6.1) 🎯 Método GQM – Goal-Question-Metric
 
-Método Goal-Question-Metric (GQM)
+O GQM (Goal-Question-Metric) é uma abordagem estruturada para definir métricas a partir de objetivos concretos do projeto.
 
-Método ATAM para avaliação de trade-offs de arquitetura
+Ideia central: métricas só fazem sentido quando ligadas a um objetivo real. Medir por medir = desperdício.
 
-Como aplicar esses métodos para selecionar métricas no contexto do projeto da turma
+### (6.2) 🧩 Como funciona:
+
+* Goal (Meta): defina o objetivo principal (ex: melhorar a qualidade, reduzir tempo de entrega, aumentar estabilidade).
+* Question (Pergunta): elabore perguntas que investigam o quanto você está atingindo esse objetivo.
+* Metric (Métrica): escolha as métricas que respondem as perguntas com dados concretos.
+
+| Etapa        | Exemplo                                                    |
+| ------------ | ---------------------------------------------------------- |
+| **Goal**     | Reduzir o tempo entre commit e entrega em produção         |
+| **Question** | Quanto tempo leva do commit ao deploy?                     |
+| **Metric**   | Lead Time (usando GitHub Actions para capturar timestamps) |
+
+### (6.3) Pense! Defina 1 GQM para seu projeto atual.
+
+## (7) 🧠 Método ATAM – Architecture Tradeoff Analysis Method
+
+O ATAM é um método usado para avaliar decisões arquiteturais com base em trade-offs, ou seja, quais métricas ou requisitos priorizar quando há conflitos entre qualidade, desempenho, segurança, etc.
+
+### (7.1) 🧩 Etapas simplificadas:
+
+1. Identifique os cenários de uso do sistema (ex: login, consulta de dados, alta carga).
+
+2. Defina atributos de qualidade relevantes: desempenho, escalabilidade, segurança, testabilidade, etc.
+
+3. Analise os trade-offs entre eles.
+
+4. Escolha métricas que ajudem a validar os atributos mais críticos.
+
+### (7.2) 📌 Exemplo aplicado:
+
+* Cenário: Sistema de pagamento com picos de acesso
+* Atributos: desempenho vs. segurança
+* Trade-off: Se aumentar a encriptação, pode afetar o tempo de resposta
+* Métrica escolhida: latência média da API de pagamento, medida com SLI
+* **Aplicação prática:** o que você escolheria como um trade-off do seu projeto e justifique as métricas com base no impacto arquitetural.
+
+### (7.3) 🧪 Como aplicar GQM + ATAM no projeto
+
+GQM: Use para alinhar as métricas com os objetivos do negócio ou do cliente
+
+ATAM: Use para escolher métricas técnicas ligadas a decisões de arquitetura
+
+Documente no repositório: crie um arquivo docs/metricas.md com a estrutura:
+
+```
+## GQM aplicado
+- **Meta:** Melhorar estabilidade do sistema
+- **Pergunta:** Quantas falhas ocorrem após cada release?
+- **Métrica:** Taxa de falhas de mudança
+
+## ATAM aplicado
+- **Cenário:** Deploy contínuo em produção
+- **Trade-off:** Velocidade vs. Confiabilidade
+- **Métrica selecionada:** Taxa de sucesso dos testes + MTTR
+```
+
+### (7.4) Template de Métricas para metricas.md do Repositório
+
+# 📊 Definição de Métricas com GQM e ATAM
+
+Este documento descreve as métricas adotadas no projeto com base nas abordagens **GQM (Goal-Question-Metric)** e **ATAM (Architecture Tradeoff Analysis Method)**, visando garantir alinhamento entre objetivos de negócio, atributos de qualidade e monitoramento contínuo.
+
+---
+
+#### 🎯 GQM – Goal, Question, Metric
+
+### ✅ Exemplo 1
+
+- **Meta (Goal):**
+  Reduzir o tempo de entrega de funcionalidades ao cliente.
+
+- **Pergunta (Question):**
+  Quanto tempo estamos levando entre o commit e o deploy em produção?
+
+- **Métrica (Metric):**
+  Lead Time, medido automaticamente via GitHub Actions com timestamp do início ao fim do workflow.
+
+---
+
+### ✅ Exemplo 2
+
+- **Meta (Goal):**
+  Melhorar a confiabilidade do sistema após cada release.
+
+- **Pergunta (Question):**
+  Quantas falhas surgem após cada implantação?
+
+- **Métrica (Metric):**
+  Taxa de falhas de mudança (Change Failure Rate), acompanhada via Sentry.
+
+---
+
+## 🧠 ATAM – Avaliação de Trade-offs Arquiteturais
+
+### 🧩 Cenário 1
+
+- **Cenário Arquitetural:**
+  A API de autenticação precisa responder rapidamente e com segurança.
+
+- **Atributos em conflito:**
+  Desempenho vs. Segurança
+
+- **Trade-off:**
+  Criptografar mais dados aumenta a segurança, mas pode elevar a latência.
+
+- **Métricas Selecionadas:**
+  - Latência média de resposta (SLI), monitorada com Prometheus
+  - Tempo máximo de resposta (percentil 95%)
+
+---
+
+### 🧩 Cenário 2
+
+- **Cenário Arquitetural:**
+  Deploy contínuo com rollback automatizado
+
+- **Atributos em conflito:**
+  Velocidade de entrega vs. Estabilidade
+
+- **Trade-off:**
+  Releases rápidos aumentam o risco de bugs em produção.
+
+- **Métricas Selecionadas:**
+  - Frequência de implantação
+  - MTTR (Mean Time to Recovery)
+  - Cobertura de código
+
+---
+
+## 📌 Observações Finais
+
+Todas as métricas definidas aqui serão:
+
+- Documentadas nos dashboards (Grafana, Codecov, etc.)
+- Monitoradas a cada execução do pipeline
+- Usadas para tomada de decisão e retrospectivas da equipe
+
