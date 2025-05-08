@@ -1,8 +1,4 @@
-# Atendimento do Professor
-
-## Terças e quintas. Professor de horário parcial. Nesses 2 dias, podem contar comigo!
-
-# Semana 04 - SLA e Métricas
+# SLA e Métricas
 
 SLA & Métricas são indicadores que auxiliam gestores e times de desenvolvimento a definir a estratégia de evolução e na operção dos produtos de software que mantém as empresas ativas. Nesta instrução iremos recuperar estes conceitos importantes na rotina de engenharia de software.
 
