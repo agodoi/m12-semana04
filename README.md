@@ -112,6 +112,7 @@ Este SLA se aplica ao serviço de **API de Autenticação**, responsável por va
 | 99,0% a 99,8%             | 10% de desconto no valor mensal        |
 | Abaixo de 99,0%           | 25% de desconto no valor mensal        |
 
+[CONTRATO AWS EC2](https://aws.amazon.com/pt/compute/sla/)
 ---
 
 ## 5. 🧾 Exceções (Não contabilizam violação de SLA)
