@@ -652,12 +652,3 @@ Este documento descreve as métricas adotadas no projeto com base nas abordagens
   - Cobertura de código
 
 ---
-
-## 📌 Observações Finais
-
-Todas as métricas definidas aqui serão:
-
-- Documentadas nos dashboards (Grafana, Codecov, etc.)
-- Monitoradas a cada execução do pipeline
-- Usadas para tomada de decisão e retrospectivas da equipe
-
