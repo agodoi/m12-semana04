@@ -348,6 +348,10 @@ De 5 execuções do job de deploy, 1 falhou por erro de configuração.
 
 ---
 
+## Kahoot!
+
+---
+
 ## (4) Instrumentação com GitHub Actions
 
 O **GitHub Actions** é uma poderosa plataforma de automação para CI/CD, e oferece acesso a logs, tempos de execução e status dos jobs de forma nativa. Isso permite que várias métricas sejam extraídas diretamente dos seus workflows.
@@ -514,6 +518,11 @@ No README.md ou em uma pasta /docs/, documente:
 ### (5.5) Exemplo de Dashboard de Métricas
 
 [exemplo](https://github.com/bxtp4p/github-server-stats-prometheus-grafana-dashboard)
+
+---
+## Kahoot!
+
+---
 
 ## 6. Definindo Métricas com GQM/ATAM
 
