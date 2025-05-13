@@ -156,6 +156,7 @@ Este SLA entra em vigor a partir de sua assinatura e permanecerá válido enquan
 
 <br><br><br><br><br>
 
+## Kahoot!
 
 ## (2) Introdução ao DevOps e à Cultura de Métricas
 
